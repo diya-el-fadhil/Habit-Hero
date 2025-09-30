@@ -300,9 +300,10 @@ function App() {
               {view === 'analytics' && 'Analytics'}
             </h1>
             <button
-              onClick={() => setShowForm(!showForm)}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-xl hover:shadow-lg transition font-medium"
+            onClick={() => setShowForm(!showForm)}
+            className="bg-purple-600 text-white px-6 py-3 rounded-xl hover:shadow-lg transition font-medium"
             >
+
               + Add New Habit
             </button>
           </div>
@@ -494,47 +495,6 @@ function App() {
                   </div>
                 );
               })}
-            </div>
-          )}
-
-          {/* AI Suggestions View */}
-          {view === 'ai-suggestions' && (
-            <div>
-              <div className="mb-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl shadow-lg p-8 text-white">
-                <div className="flex items-center gap-4">
-                  <div className="text-6xl">🤖</div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">AI-Powered Suggestions</h3>
-                    <p className="text-blue-100">Personalized habits based on your goals and current routine</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {habitSuggestions.map((suggestion, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition border-2 border-blue-200"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <h3 className="text-lg font-bold text-gray-800">{suggestion.name}</h3>
-                      <span className="text-3xl">💡</span>
-                    </div>
-                    
-                    <div className="space-y-2 text-sm text-gray-600 mb-4">
-                      <p>📂 Category: <span className="font-medium">{suggestion.category}</span></p>
-                      <p>📅 Frequency: <span className="font-medium">{suggestion.frequency}</span></p>
-                    </div>
-
-                    <button
-                      onClick={() => createSuggestedHabit(suggestion)}
-                      className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-3 rounded-xl font-medium hover:shadow-lg transition"
-                    >
-                      ➕ Add This Habit
-                    </button>
-                  </div>
-                ))}
-              </div>
             </div>
           )}
 
