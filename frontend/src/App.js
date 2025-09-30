@@ -1,6 +1,3 @@
-// FILE: src/App.js
-// Modern Sticky Note UI Design
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { format } from 'date-fns';
@@ -209,7 +206,7 @@ function App() {
             {sidebarOpen && <h2 className="text-2xl font-bold text-gray-800">Menu</h2>}
             <button 
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="p-2 hover:bg-gray-100 rounded-lg transition"
+              className="p-2 hover:bg-gray-100 rounded-lg transition -ml-[13px]"
             >
               <div className="w-6 h-0.5 bg-gray-600 mb-1"></div>
               <div className="w-6 h-0.5 bg-gray-600 mb-1"></div>
@@ -217,20 +214,6 @@ function App() {
             </button>
           </div>
         </div>
-
-        {/* Search */}
-        {sidebarOpen && (
-          <div className="p-4">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search"
-                className="w-full pl-10 pr-4 py-2 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-              <span className="absolute left-3 top-2.5 text-gray-400">🔍</span>
-            </div>
-          </div>
-        )}
 
         {/* Navigation */}
         <div className="flex-1 overflow-y-auto p-4">
@@ -243,7 +226,7 @@ function App() {
                 view === 'dashboard' ? 'bg-purple-100 text-purple-700 font-medium' : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
-              <span className="text-xl">📋</span>
+              <span className="text-xl -ml-[13px]">📋</span>
               {sidebarOpen && <span>Sticky Wall</span>}
               {sidebarOpen && view === 'dashboard' && <span className="ml-auto text-sm">{habits.length}</span>}
             </button>
@@ -254,18 +237,8 @@ function App() {
                 view === 'badges' ? 'bg-purple-100 text-purple-700 font-medium' : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
-              <span className="text-xl">🏆</span>
+              <span className="text-xl -ml-[13px]">🏆</span>
               {sidebarOpen && <span>Badges</span>}
-            </button>
-
-            <button
-              onClick={() => setView('ai-suggestions')}
-              className={`w-full text-left px-4 py-3 rounded-lg transition flex items-center gap-3 ${
-                view === 'ai-suggestions' ? 'bg-purple-100 text-purple-700 font-medium' : 'text-gray-700 hover:bg-gray-100'
-              }`}
-            >
-              <span className="text-xl">🤖</span>
-              {sidebarOpen && <span>AI Suggestions</span>}
             </button>
 
             <button
@@ -274,7 +247,7 @@ function App() {
                 view === 'calendar' ? 'bg-purple-100 text-purple-700 font-medium' : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
-              <span className="text-xl">📅</span>
+              <span className="text-xl -ml-[13px]">📅</span>
               {sidebarOpen && <span>Calendar</span>}
             </button>
           </div>
@@ -312,33 +285,19 @@ function App() {
             </div>
           )}
         </div>
-
-        {/* Sidebar Footer */}
-        {sidebarOpen && (
-          <div className="p-4 border-t border-gray-200 space-y-2">
-            <button className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition flex items-center gap-3">
-              <span>⚙️</span>
-              <span>Settings</span>
-            </button>
-            <button className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition flex items-center gap-3">
-              <span>🚪</span>
-              <span>Sign out</span>
-            </button>
-          </div>
-        )}
       </div>
 
       {/* Main Content */}
       <div className="flex-1 overflow-y-auto">
         {/* Header */}
-        <div className="bg-white shadow-sm p-6">
+        <div className="bg-white shadow-sm p-4">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold text-gray-800">
-              {view === 'dashboard' && '📋 Sticky Wall'}
-              {view === 'badges' && '🏆 Your Badges'}
-              {view === 'ai-suggestions' && '🤖 AI Suggestions'}
-              {view === 'calendar' && '📅 Calendar'}
-              {view === 'analytics' && '📊 Analytics'}
+              {view === 'dashboard' && 'Sticky Wall'}
+              {view === 'badges' && 'Your Badges'}
+              {view === 'ai-suggestions' && 'AI Suggestions'}
+              {view === 'calendar' && 'Calendar'}
+              {view === 'analytics' && 'Analytics'}
             </h1>
             <button
               onClick={() => setShowForm(!showForm)}
@@ -445,7 +404,7 @@ function App() {
                 <div className="text-center py-20">
                   <div className="text-6xl mb-4">📝</div>
                   <h3 className="text-2xl font-bold text-gray-700 mb-2">No habits yet</h3>
-                  <p className="text-gray-500">Create your first habit to get started!</p>
+                  <p className="text-gray-500">Create your first habit to get started</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
