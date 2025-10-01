@@ -25,3 +25,20 @@ pip install fastapi uvicorn sqlalchemy pydantic python-multipart
 
 # Run server
 python main.py
+```
+
+## Frontend Setup
+```bash
+cd frontend
+
+# Install dependencies
+npm install
+npm install axios react-router-dom date-fns
+npm install -D tailwindcss postcss autoprefixer
+npm install jspdf jspdf-autotable
+
+# Initialize Tailwind
+npx tailwindcss init -p
+
+# Start server
+npm start
