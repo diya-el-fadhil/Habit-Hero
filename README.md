@@ -2,13 +2,6 @@
 
 A habit tracking application to build better routines and stay consistent.
 
-## Core Features
-
-* Create habits with name, frequency (daily, weekly), category (health, work, learning), and start date
-* Track progress with check-ins or notes
-* View analytics: streaks, success rate, best days
-* Categorize habits (fitness, mental health, productivity)
-
 ## Backend Setup
 ```bash
 cd backend
@@ -42,3 +35,12 @@ npx tailwindcss init -p
 
 # Start server
 npm start
+```
+
+
+## Core Features
+
+* Create habits with name, frequency (daily, weekly), category (health, work, learning), and start date
+* Track progress with check-ins or notes
+* View analytics: streaks, success rate, best days
+* Categorize habits (fitness, mental health, productivity)
